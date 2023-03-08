@@ -1,0 +1,38 @@
+{% extends 'layouts/index.html' %}
+
+{% block Hashtag %}
+    <style type="text/css">
+        .posts {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            width: 80%;
+            margin-left: 10%;
+        }
+
+        .post_block {
+            margin: 20px;
+            transition: all 0.3s;
+        }
+
+        .post_block:hover {
+            transform: scale(1.1);
+            cursor: pointer;
+        }
+    </style>
+
+    <p align="center">Hashtags</p>
+    {% for hashtag in Hashtags %}
+            <div class="posts">
+                <div class="post_block">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ hashtag.title }}</h5>
+                            <p>{{ hashtag.title }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    {% endfor %}
+
+{% endblock %}
